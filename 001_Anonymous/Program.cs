@@ -1,2 +1,23 @@
-﻿// See https://aka.ms/new-console-template for more information
-Console.WriteLine("Hello, World!");
+﻿// Анонимные типы
+// Анонимные типы предлагают удобный способ инкапсулирования набора свойств в один объект
+// без необходимости предвартельного явного определения типа.
+// Имя типа создается компилятором и недоступно на уровне исходного кода.
+// Анонимные типы являются ссылочными типами, которые происхлдят непосредствеенно от класса object.
+// Компиляторприсваивает им имена, несмотря на то что эти имена недоступны длля приложения.
+
+class Program
+{
+    static void Main()
+    {
+                           //это не тело, а блок инициализатора!
+        var instance = new { Name = "Alex", Age = 27 };
+
+        //instance.Name = "XXX" //Св-во тольько для чтения
+
+        Console.WriteLine($"Name = {instance.Name} Age = {instance.Age}");
+
+        Type type = instance.GetType();
+
+        Console.WriteLine(type);
+    }
+}
